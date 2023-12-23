@@ -13,7 +13,7 @@ const Listcategorie = () => {
 
   const getcategories = async () => {
     await axios
-      .get("http://localhost:3001/api/categories/")
+      .get("https://ecommerce-mern-azure.vercel.app/api/categories/")
       .then((res) => {
         setcategorie(res.data);
         console.log("ddddd", res.data);
@@ -25,7 +25,9 @@ const Listcategorie = () => {
 
   const handleDelete = async (id) => {
     if (window.confirm("etes vous sure de vouloir supprimer ?"))
-      await axios.delete(`http://localhost:3001/api/categories/${id}`);
+      await axios.delete(
+        `https://ecommerce-mern-azure.vercel.app/api/categories/${id}`
+      );
     getcategories();
   };
 

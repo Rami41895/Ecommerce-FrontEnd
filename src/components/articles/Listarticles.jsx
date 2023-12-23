@@ -15,7 +15,7 @@ const Listarticles = () => {
 
   const getarticles = async () => {
     await axios
-      .get("http://localhost:3001/api/articles/")
+      .get("https://ecommerce-mern-azure.vercel.app/api/articles/")
       .then((res) => {
         setArticles(res.data);
       })
@@ -25,7 +25,9 @@ const Listarticles = () => {
   };
   const handleDelete = async (id) => {
     if (window.confirm("etes vous sure de vouloir supprimer ?"))
-      await axios.delete(`http://localhost:3001/api/articles/${id}`);
+      await axios.delete(
+        `https://ecommerce-mern-azure.vercel.app/api/articles/${id}`
+      );
     getarticles();
   };
   const handleEdit = (article) => {

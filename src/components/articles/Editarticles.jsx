@@ -25,7 +25,9 @@ const Editarticles = () => {
   }, []);
   const getscategories = async () => {
     try {
-      const res = await axios.get("http://localhost:3001/api/scategories");
+      const res = await axios.get(
+        "https://ecommerce-mern-azure.vercel.app/api/scategories"
+      );
       setScategories(res.data);
     } catch (error) {
       console.log(error);
@@ -33,11 +35,16 @@ const Editarticles = () => {
   };
   const onSubmit = async (e) => {
     e.preventDefault();
-    await axios.put(`http://localhost:3001/api/articles/${id}`, article);
+    await axios.put(
+      `https://ecommerce-mern-azure.vercel.app/api/articles/${id}`,
+      article
+    );
     navigate("/articles");
   };
   const loadarticle = async () => {
-    const result = await axios.get(`http://localhost:3001/api/articles/${id}`);
+    const result = await axios.get(
+      `https://ecommerce-mern-azure.vercel.app/api/articles/${id}`
+    );
     setArticle(result.data);
   };
   const onInputChange = (e) => {

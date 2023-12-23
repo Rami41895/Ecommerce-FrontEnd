@@ -11,30 +11,41 @@ const Affichearticlecard = ({ article }) => {
   return (
     <div className='container'>
       <div
-        style={{ display: "flex", flexWrap: "wrap", justifyContent: "left" }}
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "flex-start"
+        }}
       >
-        {article
-          ? article.map((art, index) => (
-              <Card key={index} sx={{ maxWidth: 400, margin: 1 }}>
-                <CardMedia
-                  sx={{ height: 140 }}
-                  image={art.imageart}
-                  title={art.reference}
-                />
-                <CardContent>
-                  <Typography gutterBottom variant='h5' component='div'>
-                    designation:{art.designation.substr(0, 20)}
-                  </Typography>
-                  <Typography variant='body2' color='text.secondary'>
-                    prix: {art.prix} DT
-                  </Typography>
-                </CardContent>
-                <CardActions>
-                  <Button variant='contained'>ADD TO CART</Button>
-                </CardActions>
-              </Card>
-            ))
-          : "errr"}
+        {article ? (
+          article.map((art, index) => (
+            <Card key={index} sx={{ maxWidth: 300, margin: 1, flexGrow: 1 }}>
+              <CardMedia
+                component='img'
+                height='140'
+                image={art.imageart}
+                alt={art.reference}
+              />
+              <CardContent>
+                <Typography gutterBottom variant='h6' component='div'>
+                  Designation: {art.designation.substr(0, 20)}
+                </Typography>
+                <Typography variant='body2' color='text.secondary'>
+                  Prix: {art.prix} DT
+                </Typography>
+              </CardContent>
+              <CardActions>
+                <Button variant='contained' color='primary'>
+                  ADD TO CART
+                </Button>
+              </CardActions>
+            </Card>
+          ))
+        ) : (
+          <Typography variant='body1'>
+            Data is loading. Please wait...
+          </Typography>
+        )}
       </div>
     </div>
   );

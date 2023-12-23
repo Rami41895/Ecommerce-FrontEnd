@@ -13,7 +13,7 @@ const Listscategorie = () => {
 
   const getScategories = async () => {
     await axios
-      .get("http://localhost:3001/api/scategories/")
+      .get("https://ecommerce-mern-azure.vercel.app/api/scategories/")
       .then((res) => {
         setScategorie(res.data);
         console.log("ddddd", res.data);
@@ -25,7 +25,9 @@ const Listscategorie = () => {
 
   const handleDelete = async (id) => {
     if (window.confirm("etes vous sure de vouloir supprimer ?"))
-      await axios.delete(`http://localhost:3001/api/scategories/${id}`);
+      await axios.delete(
+        `https://ecommerce-mern-azure.vercel.app/api/scategories/${id}`
+      );
     getScategories();
   };
   const handleEdit = (scat) => {

@@ -27,13 +27,18 @@ const Insertscategorie = () => {
     };
 
     console.log(scategorie);
-    await axios.post("http://localhost:3001/api/scategories/add", scategorie);
+    await axios.post(
+      "https://ecommerce-mern-azure.vercel.app/api/scategories/add",
+      scategorie
+    );
     navigate("/scategories");
   };
 
   const getcategories = async () => {
     try {
-      const res = await axios.get("http://localhost:3001/api/scategories");
+      const res = await axios.get(
+        "https://ecommerce-mern-azure.vercel.app/api/scategories"
+      );
       setScategories(res.data);
       console.log("rfdsds", res.data);
     } catch (error) {

@@ -11,7 +11,7 @@ const Listarticlecard = () => {
 
   const getArticle = async () => {
     await axios
-      .get("http://localhost:3001/api/articles/")
+      .get("https://ecommerce-mern-azure.vercel.app/api/articles/")
       .then((res) => {
         setArticle(res.data);
       })

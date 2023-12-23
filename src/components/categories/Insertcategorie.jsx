@@ -19,7 +19,10 @@ const Insertcategorie = () => {
       imagecategorie: imagecategorie
     };
 
-    await axios.post("http://localhost:3001/api/categories/add", categorie);
+    await axios.post(
+      "https://ecommerce-mern-azure.vercel.app/api/categories/add",
+      categorie
+    );
     navigate("/categories");
   };
 

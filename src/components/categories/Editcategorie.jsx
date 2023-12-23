@@ -19,13 +19,16 @@ const Editcategorie = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    await axios.put(`http://localhost:3001/api/categories/${id}`, categorie);
+    await axios.put(
+      `https://ecommerce-mern-azure.vercel.app/api/categories/${id}`,
+      categorie
+    );
     navigate("/categories");
   };
 
   const loadcategorie = async () => {
     const result = await axios.get(
-      `http://localhost:3001/api/categories/${id}`
+      `https://ecommerce-mern-azure.vercel.app/api/categories/${id}`
     );
     setcategorie(result.data);
   };
