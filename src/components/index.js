@@ -15,3 +15,5 @@ export { default as Editscategorie } from "../components/scategories/Editscatego
 export { default as Insertscategorie } from "../components/scategories/Insertscategorie";
 export { default as Listscategories } from "../components/scategories/Listscategorie";
 export { default as ViewScategorie } from "../components/scategories/ViewScategorie";
+
+export { default as menu } from "../components/Menu";

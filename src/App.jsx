@@ -5,7 +5,7 @@ import "@fortawesome/fontawesome-free/css/all.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import React from "react";
-import Menu from "./components/menu";
+
 import {
   Editarticles,
   Editcategorie,
@@ -21,6 +21,7 @@ import {
   ViewScategorie,
   Viewarticles
 } from "./components";
+import Menu from "./components/Menu";
 
 const App = () => {
   return (
