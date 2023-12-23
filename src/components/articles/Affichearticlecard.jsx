@@ -42,9 +42,7 @@ const Affichearticlecard = ({ article }) => {
             </Card>
           ))
         ) : (
-          <Typography variant='body1'>
-            Data is loading. Please wait...
-          </Typography>
+          <></>
         )}
       </div>
     </div>
